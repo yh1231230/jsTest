@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<style></style>
+<html>
+<meta charset="utf-8">
+<head>
+    <title>英雄联盟</title>
+</head>
+<body>
+<style>
+    span {
+        cursor:wait;
+    }
+    #p1{
+        color: #ff0000;
+    }
+</style>
+
+<script>
+    var s1="{\"name\":\"盖伦\",\"hp\":616}";
+    var gareen=eval("("+s1+")");
+    document.write(gareen);
+    var s2=JSON.stringify(gareen);
+    document.write(s2);
+
+    function a() {
+        var formElement1 = document.forms["test"]["mima1"].value;
+        let x = formElement1;
+        var formElement2 = document.forms["test"]["mima2"].value;
+        let y = formElement2;
+
+
+       // var a=document.getElementById("password1").value;
+        var a=(document.getElementsByClassName("a1"))[0].value;
+        var b=(document.getElementById("td2").getElementsByTagName("input"))[0].value;
+        var c=document.getElementById("name1").value.length;
+        if(c<3){
+            alert("用户名不能小于3个字符");
+            return false;
+        }
+        if (a === "" || b === "" || a !== b) {
+            alert("检查密码！");
+            return false;
+        } else alert("成功！");
+    }
+</script>
+
+
+<span>鼠标移动到这段文字上，就看到鼠标样式变了</span>
+<p id="password3" style="color: aqua">123</p>
+<script>
+     x=document.getElementsByTagName("p");
+    document.write(x[0].innerHTML);
+    x[0].innerHTML="abc";
+</script>
+<form name="test" action="skill1.png" method="post" onsubmit="return a()">
+    <table>
+        <tr>
+            <td align="right"><font color="red">*</font> 用户名：</td>
+            <td><input type="text" name="name" id="name1"></td><td><font id="p1">用户名不少于三个字符</font></td>
+        </tr>
+        <tr>
+            <td align="right"><font color="red">*</font> 密码：</td>
+            <td id="td1" ><input type="password" name="mima1" id="password1" class="a1">
+        </tr>
+        <tr>
+            <td align="right"><font color="red">*</font> 确认密码：</td>
+            <td id="td2"><input type="password" name="mima2" id="password2">
+        </tr>
+        <tr>
+            <td align="right"><font color="red">*</font> Email：</td>
+            <td><input type="email" name="email">
+        </tr>
+        <tr>
+            <td align="right"><font color="red">*</font>真实姓名：</td>
+            <td><input type="text" name="tureName">
+        </tr>
+        <tr>
+            <td align="right"><font color="red">*</font> 性别：</td>
+            <td>
+                <input type="radio" name="sex" id="nan"><label for="nan">男</label>
+                <input type="radio" name="sex" id="nv"><label for="nv">女</label>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="right"><font color="red">*</font>生日：</td>
+            <td><select>
+                <option selected="selected">1980</option>
+                <option>1990</option>
+                <option>1998</option>
+            </select>
+                <select>
+                    <option selected="selected">1</option>
+                    <option>2</option>
+                    <option>3</option>
+                </select>
+                <select>
+                    <option selected="selected">1</option>
+                    <option>2</option>
+                    <option>3</option>
+                </select>
+        </tr>
+        <tr>
+            <td align="right"><font color="red">*</font>手机：</td>
+            <td><input type="number" name="phoneNumber">
+            </td>
+        <tr>
+            <td align="right"><font color="red">*</font>居住地：</td>
+            <td><select>
+                <option selected="selected">四川省</option>
+                <option>湖北省</option>
+            </select>
+                <select>
+                    <option selected="selected">成都市</option>
+                    <option>武汉市</option>
+                </select>
+                <select>
+                    <option selected="selected">成华区</option>
+                    <option>江汉区</option>
+                </select>
+            </td>
+        <tr>
+            <td align="right"><font color="red">*</font>QQ：</td>
+            <td><input type="number" name="QQ">
+            </td>
+        <tr>
+        <tr>
+            <td align="right"><input type="submit" value="提交"></td>
+        </tr>
+    </table>
+
+</form>
+
+
+<!--
+
+
+
+<h3>英雄技能</h3><br>
+<table border="1" width="800px">
+    <tr bgcolor="#a9a9a9">
+        <td width="120px"><b>技能名</b></td>
+        <td width="50px"><b>触发</b></td>
+        <td width="120px"><b>技能属性</b></td>
+        <td width="450px"><b>技能效果</b></td>
+        <td width="60px">图标</td>
+    </tr>
+    <tr>
+        <td width="120px" align="left" valign="middle"><b>坚韧</b></td>
+        <td><b>被动</b></td>
+        <td colspan="2" align="left" valign="middle">回血</td>
+        <td><img src="skill1.png" align="center"></td>
+    </tr>
+    <tr>
+        <td><b>致命打击</b></td>
+        <td><b>Q</b></td>
+        <td>冷却8秒</td>
+        <td align="left" valign="top">加速</td>
+        <td><img src="skill2.png" align="center"></td>
+    </tr>
+    <tr>
+        <td><b>勇气</b></td>
+        <td><b>W</b></td>
+        <td>冷却22秒</td>
+        <td align="left" valign="top">护盾</td>
+        <td><img src="skill3.png" align="center"></td>
+    </tr>
+    <tr>
+        <td><b>审判</b></td>
+        <td><b>E</b></td>
+        <td>冷却9秒</td>
+        <td align="left" valign="top">持续伤害</td>
+        <td><img src="skill4.png" align="center"></td>
+    </tr>
+    <tr>
+        <td><b>德玛西亚</b></td>
+        <td><b>R</b></td>
+        <td>冷却100秒</td>
+        <td align="left" valign="top">斩杀</td>
+        <td><img src="skill5.png" align="center"></td>
+    </tr>
+</table>
+<iframe src="https://www.hao123.com" width="100%" height="1500px"></iframe>
+<br/>
+<form action="/study/login.jsp" method="post">
+</form>
+
+-->
+</body>
+</html>

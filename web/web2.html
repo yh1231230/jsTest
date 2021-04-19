@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://how2j.cn/study/jquery.min.js"></script>
+
+    <script>
+        $(function () {
+            $("#b1").click(function () {
+                $("#d").hide();
+            });
+            $("button.bb").click(function () {
+                $("#d").show();
+            });
+        });
+    </script>
+
+    <script>
+    var xmlhttp;
+    function check(){
+        var name=document.getElementById('name').value;
+        var url = "https://how2j.cn/study/checkName.jsp?name="+name;
+       // var url =null;
+        xmlhttp=new XMLHttpRequest();//创建XHR对象
+        xmlhttp.onreadystatechange=checkResult;//设置响应函数
+        xmlhttp.open("GET",url,true);//设置访问页面
+        xmlhttp.send(null);//进行访问
+    }
+
+    function checkResult(){   //调用响应函数
+        if(xmlhttp.readyState==4&&xmlhttp.status==200) {  //进行判断
+           $("#a1")[0].innerHTML=xmlhttp.responseText;  //取值并显示
+        }
+        if(xmlhttp.status==404) {
+            var a2=$("#a2:hidden").css("color","pink").show();
+          //  a2[0].hidden = false;
+        }
+    }
+    </script>
+
+
+</head>
+<body>
+<button id="b1">隐藏</button>
+<button id="b2" class="bb">显示</button>
+<br>
+<div id="d">这是一个div</div>
+<span>输入账号：</span>
+<input id="name" type="text" onkeyup="check()"><br/>
+<span id="a1"></span>
+<span id="a2" hidden="hidden">页面找不到</span><br>
+
+<button id="button1" type="button" onclick="test1()">测试1</button>
+<button id="button2" type="button" onclick="test2()">测试2</button>
+
+<script>
+    function test1(){
+        var a1="{\"name\":\"盖伦\",\"hp\":616}";
+        var a2=eval("("+a1+")");
+        alert(a2);
+    }
+    function test2(){
+        var a3=[
+            {"name":"盖伦","hp":616},
+            {"name":"提莫","hp":444}
+            ];
+        var a4=JSON.stringify(a3);
+        alert(a3[1].name)
+        alert(a4);
+    }
+</script>
+
+<input id="jqAjax" type="text" onkeyup="ajaxKeyup()"><br/>
+
+
+<div id="checkResult"></div>
+
+
+<script>
+    function ajaxKeyup() {
+        var value = document.getElementById("jqAjax").value;
+        var page = "https://how2j.cn/study/checkName.jsp?name=" + value;
+        $("#checkResult").load(page);
+    }
+        
+
+
+
+</script>
+
+
+</body>
+</html>
